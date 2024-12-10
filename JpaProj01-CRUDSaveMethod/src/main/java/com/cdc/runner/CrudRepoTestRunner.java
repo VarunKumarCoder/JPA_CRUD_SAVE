@@ -1,12 +1,24 @@
 package com.cdc.runner;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 
-public class CrudRepoTestRunner implements CommandLineRunner {
+import com.cdc.entity.Doctor;
+import com.cdc.service.IDoctorService;
 
+public class CrudRepoTestRunner implements CommandLineRunner {
+	
+	@Autowired
+	private IDoctorService doctorService;
+	
 	@Override
 	public void run(String... args) throws Exception {
-		// TODO Auto-generated method stub
+		Doctor doctor=new Doctor();
+		doctor.setDocName("Varun");
+		doctor.setIncome(200000.0);
+		doctor.setSpecialiization("Cardiology");
+		String resultMsg=doctorService.registerDoctor(doctor);
+		System.out.println(resultMsg);
 
 	}
 
