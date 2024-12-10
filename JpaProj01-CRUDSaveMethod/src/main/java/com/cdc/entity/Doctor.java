@@ -13,7 +13,7 @@ import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 
 @Entity
-@Table(name="JPA_DOCTOR_INFO")
+@Table(name="SPRINGJPA_DOCTOR_INFO")
 @Data
 @RequiredArgsConstructor
 @AllArgsConstructor
